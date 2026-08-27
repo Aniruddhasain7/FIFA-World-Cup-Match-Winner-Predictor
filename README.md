@@ -95,10 +95,7 @@ weighted avg       0.44      0.51      0.44       155
 ├── FIFA.ipynb                 # Jupyter Notebook (EDA, feature engineering, model training)
 ├── app.py                     # Streamlit web application & glassmorphic UI engine
 ├── requirements.txt           # Python dependency specifications
-├── fifa_match_model.pkl       # Trained Random Forest model binary
-├── team_encoder.pkl           # Pre-fitted team LabelEncoder
-├── result_encoder.pkl         # Pre-fitted match result LabelEncoder
-├── team_stats.pkl             # Pre-computed team historical win rates & goal averages
+├── fifa_model.joblib          # Compressed pipeline bundle (model, encoders & team stats)
 ├── all-world-cup-matches.csv  # World Cup match dataset (1930–2022)
 └── README.md                  # Project documentation
 ```

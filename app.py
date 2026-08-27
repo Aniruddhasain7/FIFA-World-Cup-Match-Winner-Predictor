@@ -7,14 +7,11 @@ def render_html(html_str):
     cleaned = "\n".join(line.strip() for line in html_str.split("\n"))
     st.markdown(cleaned, unsafe_allow_html=True)
 
-model = joblib.load("fifa_match_model.pkl")
-le_team = joblib.load("team_encoder.pkl")
-le_result = joblib.load("result_encoder.pkl")
-
-try:
-    team_stats = joblib.load("team_stats.pkl")
-except Exception:
-    team_stats = {}
+artifacts = joblib.load("fifa_model.joblib")
+model = artifacts["model"]
+le_team = artifacts["le_team"]
+le_result = artifacts["le_result"]
+team_stats = artifacts.get("team_stats", {})
 
 _encoded_teams = set(le_team.classes_)
 
